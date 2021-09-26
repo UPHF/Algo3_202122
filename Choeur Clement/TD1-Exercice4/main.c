@@ -20,6 +20,25 @@ void samePosition(int tab1[], int tab2[]){
 
 }
 
+void average(int tab[]){
+
+    int sum = 0;
+    int avg = 0;
+
+    for(int i=0; i < N; i++){
+        printf("Enter value for position %d :\n", i);
+        scanf("%d", &tab[i]);
+	}
+
+	for(int j=0; j < N; j++){
+        sum = sum + tab[j];
+	}
+
+	avg = sum / N;
+
+	return avg;
+}
+
 void afficherTableau(int tab[]){
 	for(int i=0; i< N; i++){
 		printf("at position %d, value %d\n",i, tab[i]);
@@ -32,12 +51,14 @@ int main(int argc, char **argv)
 	printf("TD1- Tableau \n");
 
 	int mytab1[N];
-	int mytab2[N];
+	// int mytab2[N];
 
-	samePosition(mytab1, mytab2);
+	// samePosition(mytab1, mytab2);
 
-	afficherTableau(mytab1);
-	afficherTableau(mytab2);
+	// afficherTableau(mytab1);
+	// afficherTableau(mytab2);
+
+	average(mytab1);
 
 	return 0;
 }
