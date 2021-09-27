@@ -58,15 +58,15 @@ void moy(int tab[]){
 	return moyenne;
 }
 
-    void min(int tab[]){
+    void minimum(int tab[]){
         int Somme = 0;
         int moyenne = 0;
 
 	for(int j=0; j < N; j++){
         Somme = Somme + tab[j];
 	}
-        int min;
-        min = tab[0];
+        int minimum;
+        minimum = tab[0];
 
 	moyenne = Somme / N;
         for(int i=0; i < N; i++){
@@ -75,12 +75,36 @@ void moy(int tab[]){
         }
 
         for(int j=0; j < N; j++){
-            if(min > tab[j])
-                min = tab[j];
+            if(minimum > tab[j])
+                minimum = tab[j];
         }
-         printf("Minimum value is : %d\n", min);
+         printf("minimumimum value is : %d\n", minimum);
 	return moyenne;
 }
+
+void minimummaximum(int tab[]){
+
+        int minimum;
+        minimum = tab[0];
+        int maximum;
+        maximum = tab[0];
+
+        for(int i=0; i < N; i++){
+            printf("Enter value for position %d :\n", i);
+            scanf("%d", &tab[i]);
+        }
+
+        for(int j=0; j < N; j++){
+            if(minimum > tab[j])
+                minimum = tab[j];
+            else if(maximum < tab[j])
+                maximum = tab[j];
+        }
+
+        printf("minimum value is : %d\n", minimum);
+        printf("Maximum value is : %d\n", maximum);
+
+    }
 
 int main(int argc, char **argv)
 {
