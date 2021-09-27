@@ -57,6 +57,31 @@
         printf("la valeur minimal est : %d\n", minimum);
     }
 
+    void maximumMinimum(int tab[]){
+
+        int minimum;
+        minimum = tab[0];
+        int maximum;
+        maximum = tab[0];
+
+        for(int i=0; i < N; i++){
+            printf("Entrer la valeur %d :\n", i);
+            scanf("%d", &tab[i]);
+        }
+
+        for(int j=0; j < N; j++){
+            if(minimum > tab[j])
+                minimum = tab[j];
+            else if(maximum < tab[j])
+                maximum = tab[j];
+        }
+
+        printf("La valeur minimale est : %d\n", minimum);
+        printf("La valeur maximale est %d\n", maximum);
+
+    }
+
+
 
     void showTable(int tab[]){
         for(int i=0; i< N; i++){
@@ -79,7 +104,9 @@
 
         // moyenne(monTab1);
 
-        minimum(monTab1);
+        // minimum(monTab1);
+
+        maximumMinimum(monTab1)
 
         return 0;
     } 
