@@ -5,6 +5,16 @@
 #include <stdio.h>
 # define N 10
 
+void recopie(int tab1[], int tab2[]) {
+for (int i = 0; i < 10; i++)
+    {
+        if (tab1[i] > 0)
+        {
+            tab2[i] = tab1[i];
+        }
+    }
+}
+
 void Posi(int tab1[], int tab2[]){
 
 	for(int i=0; i < N; i++){
