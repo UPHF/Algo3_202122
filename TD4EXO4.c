@@ -37,7 +37,27 @@ void affiTab(int tab[]){
 		printf("at position %d, value %d\n",i, tab[i]);
 		}
     printf("\n");
+}
+
+void moy(int tab[]){
+
+    int Somme = 0;
+    int moyenne = 0;
+
+    for(int i=0; i < N; i++){
+        printf("Enter value for position %d :\n", i);
+        scanf("%d", &tab[i]);
 	}
+
+	for(int j=0; j < N; j++){
+        moyenne = moyenne + tab[j];
+	}
+
+	moyenne = Somme / N;
+
+	return moyenne;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -50,6 +70,7 @@ int main(int argc, char **argv)
 
 	affiTab(tabst);
 	affiTab(tabrd);
+    moy(tabst);
 
 	return 0;
 } 
