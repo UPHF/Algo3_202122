@@ -58,6 +58,29 @@ void moy(int tab[]){
 	return moyenne;
 }
 
+    void min(int tab[]){
+        int Somme = 0;
+        int moyenne = 0;
+
+	for(int j=0; j < N; j++){
+        Somme = Somme + tab[j];
+	}
+        int min;
+        min = tab[0];
+
+	moyenne = Somme / N;
+        for(int i=0; i < N; i++){
+            printf("Enter value for position %d :\n", i);
+            scanf("%d", &tab[i]);
+        }
+
+        for(int j=0; j < N; j++){
+            if(min > tab[j])
+                min = tab[j];
+        }
+         printf("Minimum value is : %d\n", min);
+	return moyenne;
+}
 
 int main(int argc, char **argv)
 {
@@ -71,6 +94,8 @@ int main(int argc, char **argv)
 	affiTab(tabst);
 	affiTab(tabrd);
     moy(tabst);
+    minimum(tabst);
+
 
 	return 0;
 } 
