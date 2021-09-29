@@ -22,8 +22,10 @@ int copy(int t1, int t2)
 
     //Remplissage t2 de 0 s'il reste des places
 
+    for(int j = 10-t2; j<t2; j++){
     for(int i=0; i<t2; i++){
-        
+        tab2[i] = 0;
+    }
     }
 }
 
