@@ -23,10 +23,22 @@ int copy(int t1, int t2)
     //Remplissage t2 de 0 s'il reste des places
 
     for(int j = 10-t2; j<t2; j++){
-    for(int i=0; i<t2; i++){
-        tab2[i] = 0;
+        for(int i=0; i<t2; i++){
+            tab2[i] = 0;
+        }
     }
+}
+
+// Question 2
+
+float tabValAvg(Tab tab){
+    float avg = 0;
+    for (int i=0; i<10; i++){
+        avg = avg + tab[i];
     }
+    avg = avg/10;
+
+    return avg;
 }
 
 int main(void)
