@@ -41,13 +41,37 @@ float tabValAvg(Tab tab){
     return avg;
 }
 
+// Question 3
+
 int indexMinVal(Tab tab){
-    int index = tab[0];
+    int temp = tab[0];
+    int index = 0;
     for (int i=1; i<10; i++){
-        if (tab[i] < index){
-            index = tab[i];
+        if (tab[i] < temp){
+            temp = tab[i];
+            index = i;
         }
     }
+    
+    return index;
+}
+
+// Question 4
+
+int maxANDminVal(Tab tab){
+    int minVal = tab[0];
+    int maxVal = tab[0];
+    
+    for (int i=1; i<10; i++){
+        if (tab[i] < minVal){
+            minVal = tab[i];
+        }
+        if (tab[i] > maxVal){
+            maxVal = tab[i];
+        }
+    }
+
+    return minVal, maxVal;
 }
 
 int main(void)
