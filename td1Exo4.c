@@ -41,6 +41,15 @@ float tabValAvg(Tab tab){
     return avg;
 }
 
+int indexMinVal(Tab tab){
+    int index = tab[0];
+    for (int i=1; i<10; i++){
+        if (tab[i] < index){
+            index = tab[i];
+        }
+    }
+}
+
 int main(void)
 {
     return 0;
