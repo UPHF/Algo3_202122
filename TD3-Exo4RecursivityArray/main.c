@@ -109,14 +109,30 @@ void saisieRecursiveDebug(int tab[], int i){
 	}
 }
 
+int valMaxDebug(int tab[], int i){
+	printf("[Debug]Current value of i: %d\n", i);	
+	if( i<0){
+		printf("[Debug]Inside Stop condition: (negative position does not exist)\n");
+		return 0;
+	}
+	else{
+		int maxAtLeft = valMaxDebug(tab,i-1);
+		printf("[Debug] max between pos 0 and %d: %d  vs value at pos %d : %d\n", i-1,maxAtLeft, i,tab[i] );	
+		if(maxAtLeft > tab[i])
+			return maxAtLeft;
+		else{
+			return tab[i];
+		}
+		
+		}
+}
+
 int valMax(int tab[], int i){
 	if (i < 0){
 			return 0;
 	}
 	else{
-		
 		int maxAtLeft = valMax(tab,i-1);
-		
 		if(maxAtLeft > tab[i])
 			return maxAtLeft;
 		else{
@@ -145,7 +161,9 @@ int main(int argc, char **argv)
 	//int resultSum = sommeRecursiveDebug(tab, indexLastPosition);
 	//printf("Result Sum value %d: \n", resultSum);
 	
-	int resultMax = valMax(tab, indexLastPosition);
+	//int resultMax = valMax(tab, indexLastPosition);
+	int resultMax = valMaxDebug(tab, indexLastPosition);
+	
 	printf("Result Max value %d: \n", resultMax);
 	
 	
