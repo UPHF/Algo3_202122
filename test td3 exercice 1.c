@@ -31,7 +31,30 @@ void affiche_inverse()
 
     return 0;
 }
+///3
+void comparer()
+{
+   char chaine2[20], chaine3[20];
+
+   printf("\n Entrez la premiere chaine: ");
+   gets(chaine2);
+
+   printf("\n Entrez la deuxième chaine: ");
+   gets(chaine3);
+
+   if (strcmp(chaine2,chaine3) == 0)
+      printf(" Les deux chaines sont egales.\n");
+   else
+      printf(" Les deux chaines ne sont pas egales.\n");
+
+   return 0;
+}
+///4
+
+///5
+
 main(){
 longueur();
 affiche_inverse();
+comparer();
 }
