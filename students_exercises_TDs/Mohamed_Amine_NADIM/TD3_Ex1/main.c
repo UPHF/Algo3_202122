@@ -14,7 +14,7 @@ void longueur(char str[]){
     printf("La longueur de la chaine de caracteres '%s' est : %d \n", str, lng);
 }
 
-
+//Q2
 
 void afficheInverse(char str[]){
     int l = 0, i = 0;
@@ -34,6 +34,7 @@ void afficheInverse(char str[]){
     printf("L'inverse de %s est :  %s\n", str, inv);
 }
 
+//Q3
 
 void sontEgales(char str1[], char str2[])
 {   int ln1 = 0, ln2 = 0, s = 0;
@@ -64,8 +65,7 @@ void sontEgales(char str1[], char str2[])
     }
 }
 
-
-
+//main
 int main()
 {
     printf("TD3_Ex1\n");
