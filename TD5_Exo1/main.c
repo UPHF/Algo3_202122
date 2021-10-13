@@ -3,16 +3,18 @@
 # define N 10
 
 typedef int Tab[N];
+
 int permute(int *i, int *j){
 	int temp = *i;
 	*i = *j;
 	*j = temp;
 }
 
-int initPivot(Tab t, g,d){
+int initPivot(Tab t, int  g, int d){
+	return t[g];
 }
 
-int partitionner(Tab t, g,d){
+int partitionner(Tab t, int g, int d){
 	int pivot = initPivot(t, g,d);
 	int i = g - 1;
 	int j = d + 1;
@@ -37,7 +39,13 @@ int partitionner(Tab t, g,d){
 	
 }
 
-
+int quicksort(Tab t, int g, int d){
+	
+	int p = partitionner(t, g, d);
+	quicksort(t, g, p);
+	quicksort(t, p + 1, d);
+}
+	
 int main(int argc, char **argv)
 {
 	printf("TD5-exo1\n");
