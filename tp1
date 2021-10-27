@@ -24,9 +24,21 @@ printf("%s : %f2.2\n", Tabclient[i].identifiant,
  Tabclient[i].nom);
 }
 
+void afficherClients(tab t, int nbClients){
+    int i;
+        for (i = 0 ; i < nbClients ; i++)
+    {
+        printf("%c\n",tab[i]);
+    }
+
+    return 0;
+}
+
+
 main(int argc, char **argv){
  CLIENT c1,
  tab t;
  saisie (&c1);
  saisieClients (t,p,&nbclient);
+ afficherClients(t,nbclients);
  }
