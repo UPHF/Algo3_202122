@@ -7,6 +7,7 @@ Years : 2021/2022
 */
 
 #include <stdio.h>
+#include <string.h>
 
 #define N 10
 
@@ -26,30 +27,61 @@ void saisie(Client *c){
     scanf("%s", c->nomClient);
 }
 
-int ajouter(Client c, Tab t, int *nbClients){
-    if(*nbClients == 10){
-        return 1;
-    }
-    else{
-        return 0;
+void modifierNom(Tab t, int nbClients, int i){
+    Chaine nouveauNom;
+
+    if(i <= nbClients){
+        printf("\nEntrer le nouveau nom du client %d : ", i);
+        scanf("%s", nouveauNom);
+        strcpy(t[i-1].nomClient, nouveauNom);
     }
 }
 
-void affiche(Client *c){
-    printf("\nId client : %d\n", c->idClient);
-    printf("Nom du client : %s\n", c->nomClient); // c->idClient; = (*c).idCLient;
+int ajouter(Client c, Tab t, int *nbClients){
+    if(*nbClients == N){
+        return 0;
+    }
+    else{
+        t[*nbClients] = c;
+        *nbClients += 1;
+        return 1;
+    }
+}
+
+void affiche(Tab t, int nbClients){
+    for(int i = 0; i<nbClients; i++){
+        printf("\nId client : %d\n", t[i].idClient);
+        printf("Nom du client : %s\n", t[i].nomClient); // c->idClient; = (*c).idCLient;
+    }
+}
+
+int saisieClients(Tab t, int p, int *nbClients){
+    if(*nbClients == N){
+        return 0;
+    }
+    else{
+        for(int i=0; i<p; i++){
+            Client c = t[*nbClients + i];
+            saisie(&c);
+            ajouter(c, t, nbClients);
+        }
+        return 1;
+    }
 }
 
 int main(int argc, char *argv[])
 {
-    Client c;
     Tab t;
     int *nbClients;
-    saisie(&c);
-    affiche(&c);
-    ajouter(c, t, &nbClients);
+    int nbclient = 0;
+    nbClients = &nbclient;
 
+    saisieClients(t, 3, nbClients);
+    affiche(t, nbclient);
+    modifierNom(t, nbclient, 2);
+    affiche(t, nbclient);
 
+    printf("\nNombre de client dans le tableau : %d\n", *nbClients);
     printf("\nC'est OK\n");
     return 0;
 }
