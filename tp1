@@ -16,8 +16,17 @@ void saisie(CLIENT *c){
         scanf("%s", &c->nom);
 }
 
+void saisieClients(tab t,int i, int * nbClients){
+int tabcli[N] ;
+ CLIENT Tabclient[N];
+ for (i=0;i<N; i++)
+printf("%s : %f2.2\n", Tabclient[i].identifiant,
+ Tabclient[i].nom);
+}
+
 main(int argc, char **argv){
  CLIENT c1,
  tab t;
  saisie (&c1);
+ saisieClients (t,p,&nbclient);
  }
