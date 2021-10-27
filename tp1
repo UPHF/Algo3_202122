@@ -9,8 +9,15 @@ typedef struct{
 }CLIENT ;
 typedef CLIENT tab[];
 
+void saisie(CLIENT *c){
+    printf("\n id ? : ");
+        scanf("%d", &c->identifiant);
+    printf("\n nom ? ");
+        scanf("%s", &c->nom);
+}
 
 main(int argc, char **argv){
  CLIENT c1,
  tab t;
+ saisie (&c1);
  }
