@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+# define N 5
+
+typedef string[15];
+typedef struct{
+    int identifiant;
+    char nom[15];
+}CLIENT ;
+typedef CLIENT tab[];
+
+
+main(int argc, char **argv){
+ CLIENT c1,
+ tab t;
+ }
