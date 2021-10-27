@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+# define N 5
+
+typedef string[15];
+typedef struct{
+    int identifiant;
+    char nom[15];
+}CLIENT ;
+typedef CLIENT tab[];
+
+void saisie(CLIENT *c){
+    printf("\n id ? : ");
+        scanf("%d", &c->identifiant);
+    printf("\n nom ? ");
+        scanf("%s", &c->nom);
+}
+
+void saisieClients(tab t,int i, int * nbClients){
+int tabcli[N] ;
+ CLIENT Tabclient[N];
+ for (i=0;i<N; i++)
+printf("%s : %f2.2\n", Tabclient[i].identifiant,
+ Tabclient[i].nom);
+}
+
+void afficherClients(tab t, int nbClients){
+    int i;
+        for (i = 0 ; i < nbClients ; i++)
+    {
+        printf("%c\n",tab[i]);
+    }
+
+    return 0;
+}
+
+int rechercheClient(int idClient, tab t, int nbClients, int * indiceClient){
+   int i;
+   printf(" Entrez l'id à rechercher: ");
+   scanf("%d", &idClient);
+   i = 0;
+   while (i < nbClients  && idClient != tab.identifiants[i]) {
+      i++;
+   }
+
+   if (i < nbClients) {
+      printf("L'id se trouve dans la position = %d", i + 1);
+   } else {
+      printf("Elément non trouvé");
+   }
+
+   return 0;
+}
+
+void rechercheIdMinMax(tab t, int nbClients, int * indiceIdMin, int * indiceIdMax){
+      int position;
+      for (int i=0 ; i< nbClients ; i++)
+      {
+          if(tab[i]>indiceIdMax){
+                         indiceIdMax=tab[i];
+                         position=i;
+          }
+      }
+      printf("id max : %d\nPosition : %d\n",indiceIdMax,position);
+
+        for (int i=0 ; i< nbClients ; i++)
+      {
+          if(tab[i]<indiceIdMin){
+                         indiceIdMin=tab[i];
+                         position=i;
+          }
+      }
+      printf("id min : %d\nPosition : %d\n",indiceIdMin,position);
+
+      return 0;
+}
+
+
+main(int argc, char **argv){
+ CLIENT c1,
+ tab t;
+ saisie (&c1);
+ saisieClients (t,p,&nbclient);
+ afficherClients(t,nbclients);
+ rechercheclient(idclient,t,nbclients,*indiceclient);
+ rechercheIdMinMax(t,nbclients,indiceIdMin,indiceIdMax);
+ }
