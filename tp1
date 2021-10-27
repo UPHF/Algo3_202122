@@ -34,6 +34,24 @@ void afficherClients(tab t, int nbClients){
     return 0;
 }
 
+int rechercheClient(int idClient, tab t, int nbClients, int * indiceClient){
+   int i;
+   printf(" Entrez l'id à rechercher: ");
+   scanf("%d", &idClient);
+   i = 0;
+   while (i < nbClients  && idClient != tab.identifiants[i]) {
+      i++;
+   }
+
+   if (i < nbClients) {
+      printf("L'id se trouve dans la position = %d", i + 1);
+   } else {
+      printf("Elément non trouvé");
+   }
+
+   return 0;
+}
+
 
 main(int argc, char **argv){
  CLIENT c1,
@@ -41,4 +59,5 @@ main(int argc, char **argv){
  saisie (&c1);
  saisieClients (t,p,&nbclient);
  afficherClients(t,nbclients);
+ rechercheclient(idclient,t,nbclients,*indiceclient);
  }
