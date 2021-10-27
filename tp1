@@ -52,6 +52,29 @@ int rechercheClient(int idClient, tab t, int nbClients, int * indiceClient){
    return 0;
 }
 
+void rechercheIdMinMax(tab t, int nbClients, int * indiceIdMin, int * indiceIdMax){
+      int position;
+      for (int i=0 ; i< nbClients ; i++)
+      {
+          if(tab[i]>indiceIdMax){
+                         indiceIdMax=tab[i];
+                         position=i;
+          }
+      }
+      printf("id max : %d\nPosition : %d\n",indiceIdMax,position);
+
+        for (int i=0 ; i< nbClients ; i++)
+      {
+          if(tab[i]<indiceIdMin){
+                         indiceIdMin=tab[i];
+                         position=i;
+          }
+      }
+      printf("id min : %d\nPosition : %d\n",indiceIdMin,position);
+
+      return 0;
+}
+
 
 main(int argc, char **argv){
  CLIENT c1,
@@ -60,4 +83,5 @@ main(int argc, char **argv){
  saisieClients (t,p,&nbclient);
  afficherClients(t,nbclients);
  rechercheclient(idclient,t,nbclients,*indiceclient);
+ rechercheIdMinMax(t,nbclients,indiceIdMin,indiceIdMax);
  }
