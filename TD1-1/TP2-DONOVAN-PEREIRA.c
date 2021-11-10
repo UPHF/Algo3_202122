@@ -84,6 +84,18 @@ void affichagedecroissants(Tab t,int n){
         affichagedecroissants (t, n-1) ;
 }
 
+/*Question 5*/
+
+int recherche(int *t, int n, int i, int rech){
+
+if (i == n) return -1;
+    if (t[i] == rech)
+    {
+        return i;
+    }
+     recherche(t,n,i+1, rech);
+}
+
 int main(){
 
     printf("Algo-3 TP2-Donovan-Pereira.c\n");
@@ -95,6 +107,7 @@ int main(){
     calcul(t1,N);
     superieur(t1,N,0,2);
     affichagedecroissants(t1,2);
-    
+    printf("l'indice de recherche est %d",recherche(t1,N,0,2));
+
     return 0;
 }
