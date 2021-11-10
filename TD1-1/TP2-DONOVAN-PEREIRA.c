@@ -76,6 +76,14 @@ void superieur(Tab t, int n, int i, int supe){
     }
 }
 
+/*Question 4*/
+
+void affichagedecroissants(Tab t,int n){
+    if (n == -1) return;
+    printf("Valeur décroissantes %d\n", t[n]) ;
+        affichagedecroissants (t, n-1) ;
+}
+
 int main(){
 
     printf("Algo-3 TP2-Donovan-Pereira.c\n");
@@ -86,6 +94,7 @@ int main(){
     /*afficher(t1, 10); version deux*/
     calcul(t1,N);
     superieur(t1,N,0,2);
-
+    affichagedecroissants(t1,2);
+    
     return 0;
 }
