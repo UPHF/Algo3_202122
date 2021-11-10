@@ -45,7 +45,7 @@ void afficher(Tab t,int i)
     else
     {
         afficher(t,i-1);
-        printf("\nElement du tableau à la position %d : %d", i,t[i]);
+        printf("\nElement du tableau à la position %d : %d\n", i,t[i]);
     }
 }
 
@@ -63,15 +63,29 @@ int calcul(Tab t, int n){
     return res ;
 }
 
+/*Question 3*/
+
+void superieur(Tab t, int n, int i, int supe){
+    if (i<n)
+    {
+        if (t[i] > supe)
+        {
+            printf("La valeur %d est plus grande que %d\n",t[i], supe);
+        }
+        superieur(t, n, i+1, supe);
+    }
+}
+
 int main(){
 
-    printf("Algo-3 TP2-Donovan-Pereira.c");
+    printf("Algo-3 TP2-Donovan-Pereira.c\n");
 
     Tab t1 = {4,2,8,0,7,3,1,5,9,6};
     printf ("La somme des entiers du tableau t1 = %d\n",somme(t1,N,0));
     affichage(t1, 10);
     /*afficher(t1, 10); version deux*/
     calcul(t1,N);
+    superieur(t1,N,0,2);
 
     return 0;
 }
