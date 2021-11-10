@@ -49,6 +49,20 @@ void afficher(Tab t,int i)
     }
 }
 
+/*Question 2*/
+
+int calcul(Tab t, int n){
+    int res = 0, i = 0;
+    printf ("Calcul de la somme a partir de l’indice %d :\n",i);
+    if (i<n){
+        printf ("\t appel du calcul de la somme a partir de l’indice %d :\n",i+1);
+        res=t[i]+somme(t,n,i+1);
+        printf ("\t addition avec t[%d]\n",i );
+    }
+    printf ("\t Somme a partir de l’indice %d = %d\n\n",i,res);
+    return res ;
+}
+
 int main(){
 
     printf("Algo-3 TP2-Donovan-Pereira.c");
@@ -57,6 +71,7 @@ int main(){
     printf ("La somme des entiers du tableau t1 = %d\n",somme(t1,N,0));
     affichage(t1, 10);
     /*afficher(t1, 10); version deux*/
+    calcul(t1,N);
 
     return 0;
 }
