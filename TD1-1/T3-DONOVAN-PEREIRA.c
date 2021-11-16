@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 #define N 10
 typedef int Tab[N];
 
@@ -24,7 +24,7 @@ void affichage(Tab t, int SizeTab){
     }
     else {
         affichage(t,SizeTab);
-        printf("Element a la position  %d = %d\n", SizeTab, t[SizeTab]);
+        printf("| %d ", t[SizeTab]);
     }
 }
 
@@ -33,6 +33,12 @@ void recopie(Tab t1, Tab t2 , int n){
         t2[i]=t1[i];
         }
     printf("\n");
+}
+
+void trie(Tab tab){
+    int i;
+    for (i=0; i < N; i++)
+     printf("%4d", tab[i]);
 }
 
 int main (int argc, char *argv[]){
@@ -44,6 +50,7 @@ int main (int argc, char *argv[]){
     remplirTableau(t1,N);
     affichage(t1, N);
     recopie(t1, t2, N);
+    trie(t1);
 
     return 0;
 }
